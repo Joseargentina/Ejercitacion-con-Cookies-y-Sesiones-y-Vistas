@@ -1,36 +1,24 @@
 <!-- views/tareas.ejs -->
-<!DOCTYPE html>
-<html lang="es-AR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tareas</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
-  </head>
-  <body>
-    <h1>Tareas</h1>
-    <form action="/tareas" method="POST">
-      <label for="descripcion">Descripción de la tarea:</label>
-      <input type="text" id="descripcion" name="descripcion" required />
-      <button type="submit">Agregar tarea</button>
-    </form>
-    <h2>Lista de tareas</h2>
-    <ul>
-      <% tareas.forEach(function(tarea) { %>
+<%- include('partials/header') %>
+  <h1>Tareas</h1>
+  <form action="/tareas" method="POST">
+    <label for="descripcion">Descripción de la tarea:</label>
+    <input type="text" id="descripcion" name="descripcion" required />
+    <button type="submit">Agregar tarea</button>
+  </form>
+  <h2>Lista de tareas</h2>
+  <ul>
+    <% tareas.forEach(function(tarea) { %>
       <li>
         <%= tarea.descripcion %>
-        <form
-          action="/tareas/<%= tarea.id %>?_method=DELETE"
-          method="POST"
-          style="display: inline"
-        >
-          <button type="submit">Eliminar</button>
-        </form>
+          <form action="/tareas/<%= tarea.id %>?_method=DELETE" method="POST" style="display: inline">
+            <button type="submit">Eliminar</button>
+          </form>
       </li>
       <% }); %>
-    </ul>
-    <form action="/logout" method="POST">
-      <button type="submit">Cerrar sesión</button>
-    </form>
-  </body>
-</html>
+  </ul>
+  <form action="/logout" method="POST">
+    <button type="submit">Cerrar sesión</button>
+  </form>
+
+  <%- include('partials/footer') %>

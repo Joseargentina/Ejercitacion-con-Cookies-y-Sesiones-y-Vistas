@@ -1,21 +1,15 @@
 <!-- views/register.ejs -->
-<!DOCTYPE html>
-<html lang="es-AR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registrarse</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
-  </head>
-  <body>
-    <h1>Registrarse</h1>
-    <form action="/register" method="POST">
-      <label for="username">Usuario:</label>
-      <input type="text" id="username" name="username" required />
-      <label for="password">Contraseña:</label>
-      <input type="password" id="password" name="password" required />
-      <button type="submit">Registrarse</button>
-    </form>
-    <p>¿Ya tenés una cuenta? <a href="/login">Iniciá sesión acá</a></p>
+<%- include('partials/header') %>
+
+  <h1>Registrarse</h1>
+  <form action="/register" method="POST">
+    <label for="usuario">Usuario:</label>
+    <input type="text" id="usuario" name="usuario" required />
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required />
+    <button type="submit">Registrarse</button>
+  </form>
+  <p>¿Ya tenés una cuenta? <a href="/login">Iniciá sesión acá</a></p>
   </body>
-</html>
+
+  <%- include('partials/footer') %>

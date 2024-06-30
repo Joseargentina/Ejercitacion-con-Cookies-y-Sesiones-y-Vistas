@@ -1,21 +1,10 @@
 <!-- views/404.ejs -->
-<!DOCTYPE html>
-<html lang="es-AR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página no encontrada</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"
-    />
-  </head>
-  <body>
-    <h1>404</h1>
-    <p>Página no encontrada</p>
-    <p>¿Querés volver a la página de inicio de sesión o registrarte?</p>
-    <p>
-      <a href="/login">Iniciar sesión</a> | <a href="/register">Registrarse</a>
-    </p>
-  </body>
-</html>
+<%- include('partials/header') %>
+
+  <h1>404</h1>
+  <p>Página no encontrada</p>
+  <p>¿Querés volver a la página de inicio de sesión o registrarte?</p>
+  <p>
+    <a href="/login">Iniciar sesión</a> | <a href="/register">Registrarse</a>
+  </p>
+  <%- include('partials/footer') %>

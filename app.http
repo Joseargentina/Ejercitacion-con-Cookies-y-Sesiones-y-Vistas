@@ -1,0 +1,36 @@
+### Ruta POST manejar el registrto
+POST http://localhost:3000/register
+Content-Type: application/json
+{
+    "usuario": "Juan",
+    "password": "12345"
+}
+
+### Ruta POST a login manejar el inicio de sesion
+POST http://localhost:3000/login
+Content-Type: application/json
+{
+    "usuario": "Juan",
+    "password": "12345"
+}
+
+### Ruta POST a logout manejar el cierre de sesion
+POST http://localhost:3000/logout
+
+
+### Gestion de tareas 
+### Agregar una tarea
+POST http://localhost:3000/tareas
+Content-Type: application/json
+{
+    "descripcion": "incompleta"
+}
+
+### Eliminar una tarea
+DELETE http://localhost:3000/tareas/1
+
+ 
+
+
+
+
